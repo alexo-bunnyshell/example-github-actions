@@ -2,14 +2,14 @@ name: Build and Push Docker image
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
     # only build when important files change
     paths:
       - 'app/**'
       - 'Dockerfile'
-      - '.github/.workflows/build_docker_image.yaml'
+      - '.github/workflows/build_docker_image.yaml'
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
