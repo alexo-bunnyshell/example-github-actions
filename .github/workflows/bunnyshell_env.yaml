@@ -1,4 +1,4 @@
-name: Bunnyshell Env
+name: Deploy Bunnyshell Env
 
 concurrency: bns-deploy-${{ github.event.workflow_run.referenced_workflows[0].ref || format('refs/pull/{0}/merge', github.event.issue.number) }}
 
