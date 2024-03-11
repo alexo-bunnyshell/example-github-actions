@@ -15,8 +15,11 @@ on:
 
 jobs:
   debug:
-    name: Debug
-    run: |
-      echo "DEBUG: ${{ github.event.workflow_run.referenced_workflows[0].ref || format('refs/pull/{0}/merge', github.event.issue.number) }}"
+    name: Bunnyshell
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Debug"
+        run: |
+          echo "DEBUG: ${{ github.event.workflow_run.referenced_workflows[0].ref || format('refs/pull/{0}/merge', github.event.issue.number) }}"
 
 
