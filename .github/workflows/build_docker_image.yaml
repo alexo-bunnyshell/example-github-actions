@@ -48,8 +48,8 @@ jobs:
         # flavor: latest=false
         # tags: ${{ inputs.tag-rules }}
         tags: |
-          alexobunnyshell/example-github-actions:latest
-          alexobunnyshell/example-github-actions:0.0.2
+          latest
+          0.0.3
     
     
     # - name: Build and push
