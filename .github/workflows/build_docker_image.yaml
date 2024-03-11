@@ -31,7 +31,7 @@ jobs:
 
     - name: read tags
       run: |
-        echo "VERSION=0.0.4" >> $GITHUB_ENV
+        echo "VERSION=$(cat version.txt)" >> $GITHUB_ENV
 
     - name: debug
       run: |
