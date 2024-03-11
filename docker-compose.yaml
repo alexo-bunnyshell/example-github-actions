@@ -1,0 +1,12 @@
+services:
+  
+  web:
+    image: nginx:alpine
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: prod
+    ports:
+      - "8080:80"
+    expose:
+      - 8080
