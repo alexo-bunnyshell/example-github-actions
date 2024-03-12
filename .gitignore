@@ -130,3 +130,4 @@ dist
 .pnp.*
 build/index.html
 build/version.txt
+.act_env
