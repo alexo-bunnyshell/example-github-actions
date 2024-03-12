@@ -1,0 +1,25 @@
+name: Deploy Bunnyshell Env
+
+concurrency: bns-deploy-${{ github.event.workflow_run.referenced_workflows[0].ref || format('refs/pull/{0}/merge', github.event.issue.number) }}
+
+
+on:
+  workflow_run:
+    workflows:
+      - "Build and Push Docker image"
+    types:
+      - completed
+  issue_comment:
+    types: [ created, edited ]
+
+
+jobs:
+  debug:
+    name: Bunnyshell
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Debug"
+        run: |
+          echo "DEBUG: ${{ github.event.workflow_run.referenced_workflows[0].ref || format('refs/pull/{0}/merge', github.event.issue.number) }}"
+
+
