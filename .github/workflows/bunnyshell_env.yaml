@@ -20,6 +20,6 @@ jobs:
     steps:
       - name: "Debug"
         run: |
-          echo "DEBUG: ${{ github.event.workflow_run.referenced_workflows[0].ref || format('refs/pull/{0}/merge', github.event.issue.number) }}"
-
-
+          echo "DEBUG: referenced_workflows: ${{ github.event.workflow_run.referenced_workflows[0].ref }}"
+          echo "DEBUG: github.event.issue.number ${{ github.event.issue.number }}"
+          echo "DEBUG: ${{ github.event_path }}
