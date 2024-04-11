@@ -1,0 +1,10 @@
+services:
+  
+  web:
+    image: nginx:alpine
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    ports:
+      - "8081:80"
