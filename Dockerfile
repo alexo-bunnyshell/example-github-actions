@@ -12,10 +12,11 @@ COPY build.sh build.sh
 RUN chmod +x build.sh
 RUN ./build.sh
 
+from build as dev
+COPY --from=build /work/build /usr/share/nginx/html
+
 
 from nginx:alpine as prod
-
-
 COPY --from=build /work/build /usr/share/nginx/html
 
 
